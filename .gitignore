@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# Qt
+Makefile
+.qmake.*
+moc_*.*
+
+# Mac
+.DS_Store
