@@ -280,9 +280,9 @@ void FDCDialog::driveNumEditSlot()
 	else {
 		d = driveNumEdit->text().toInt();
 
-		if (d >= 0 && d < MAX_DRIVE) {
+//		if (d >= 0 && d < MAX_DRIVE) {
 			driveNum = d;
-		}
+//		}
 	}
 }
 
@@ -292,9 +292,9 @@ void FDCDialog::trackNumEditSlot()
 
 	t = trackNumEdit->text().toInt();
 
-	if (t >= 0 && t < trackMax) {
+//	if (t >= 0 && t < trackMax) {
 		trackNum = t;
-	}
+//	}
 }
 
 void FDCDialog::statTimerEditSlot()
@@ -532,7 +532,7 @@ void FDCDialog::writCmd()
 		serialPort->write((char *) trackBuf, trackLen + 2);
 	}
 	else {
-		messageLabel->setText(QString("Received WRIT "));
+		messageLabel->setText(QString("Received "));
 		switch (cmdBuf.rcode) {
 			case STAT_NOT_READY:
 				messageLabel->setText(messageLabel->text() + QString("NOT READY"));
@@ -547,7 +547,7 @@ void FDCDialog::writCmd()
 				messageLabel->setText(messageLabel->text() + QString("UNKNOWN"));
 				break;
 		}
-		messageLabel->setText(messageLabel->text() + QString("'WSTA' response"));
+		messageLabel->setText(messageLabel->text() + QString(" WSTA response"));
 
 		return;
 	}
